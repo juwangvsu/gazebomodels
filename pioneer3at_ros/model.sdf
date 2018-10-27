@@ -6,6 +6,7 @@
 <!--
 -->
  <link name="Pioneer3AT/base_link">
+    <pose>0 0 -0.10 0 0 0</pose>
      <inertial>
         <mass>0.001</mass>
         <inertia>
@@ -25,38 +26,60 @@
         </geometry>
       </collision>
 </link>
-        <joint name="base_top_joint" type="fixed">
-                <parent link="Pioneer3AT/base_link"/>
-                <child link="chassis"/>
-        </joint>
+<joint name="base_top_joint" type="fixed">
+         <parent> Pioneer3AT/base_link</parent>
+         <child>chassis</child>
+</joint>
 <!--
 -->
 <link name="camera_rgb_frame">
+      <pose>0 0 -0.03 0 0 0</pose>
+<!--
+      <pose frame=''>-0.3 0 0.18 0 1e-06 0.000218</pose>
+-->
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.01 0.0100 0.01</size>
+            <size>0.01 0.01 0.01</size>
           </box>
         </geometry>
       </collision>
 </link>
+<joint name="camera_rgb_to_base" type="fixed">
+        <parent>chassis</parent>
+        <child>camera_rgb_frame</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <upper>0</upper>
+            <lower>0</lower>
+          </limit>
+        </axis>
+</joint>
+
 <link name="camera_depth_frame">
+      <pose>0 0 -0.035 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.01 0.0100 0.01</size>
+            <size>0.01 0.01 0.01</size>
           </box>
         </geometry>
       </collision>
 </link>
-        <joint name="camera_rgb_to_base" type="fixed">
-                <parent link="Pioneer3AT/base_link"/>
-                <child link="camera_rgb_frame"/>
-        </joint>
-        <joint name="camera_depth_to_base" type="fixed">
-                <parent link="Pioneer3AT/base_link"/>
-                <child link="camera_depth_frame"/>
-        </joint>
+<!--
+-->
+<joint name="camera_depth_to_base" type="fixed">
+       <parent>chassis</parent>
+       <child>camera_depth_frame</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <upper>0</upper>
+            <lower>0</lower>
+          </limit>
+        </axis>
+</joint>
     <link name="chassis">
       <inertial>
         <mass>14.0</mass>
