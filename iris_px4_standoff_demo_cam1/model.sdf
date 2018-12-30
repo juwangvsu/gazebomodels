@@ -612,6 +612,9 @@
       <imuSubTopic>/imu</imuSubTopic>
       <mavlink_addr>INADDR_ANY</mavlink_addr>
       <mavlink_udp_port>14570</mavlink_udp_port>
+      <gps_lat>0.6497369871198555</gps_lat>
+      <gps_lon>-1.3515736175985889</gps_lon>
+
       <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
       <control_channels>
         <channel name='rotor1'>
