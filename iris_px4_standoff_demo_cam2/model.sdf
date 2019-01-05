@@ -104,7 +104,7 @@
       </sensor>
     </link>
 -->
-    <joint name='cgo3_camera_joint' type='revolute'>
+    <joint name='cgo3_camera_joint' type='fixed'>
 <pose> 0 0 0 0 0 0 </pose>
       <child>iris_demo_cam::gimbal_small_2d_px4_2::base_link</child>
 <!--
