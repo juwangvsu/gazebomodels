@@ -82,7 +82,7 @@
 </joint>
     <link name="chassis">
       <inertial>
-        <mass>14.0</mass>
+        <mass>54.0</mass>
         <inertia>
           <!-- http://en.wikipedia.org/wiki/List_of_moment_of_inertia_tensors
           MATLAB:
@@ -128,7 +128,7 @@
             <ode>
               <mu>1</mu>
               <mu2>1</mu2>
-              <slip1>0.5</slip1>
+              <slip1>0</slip1>
               <slip2>0</slip2>
             </ode>
           </friction>
@@ -156,7 +156,7 @@
             <ode>
               <mu>1</mu>
               <mu2>1</mu2>
-              <slip1>0.5</slip1>
+              <slip1>0</slip1>
               <slip2>0</slip2>
             </ode>
           </friction>
@@ -184,7 +184,7 @@
             <ode>
               <mu>1</mu>
               <mu2>1</mu2>
-              <slip1>0.5</slip1>
+              <slip1>0</slip1>
               <slip2>0</slip2>
             </ode>
           </friction>
@@ -212,7 +212,7 @@
             <ode>
               <mu>1</mu>
               <mu2>1</mu2>
-              <slip1>0.5</slip1>
+              <slip1>0</slip1>
               <slip2>0</slip2>
             </ode>
           </friction>
@@ -273,7 +273,7 @@
     <wheelDiameter>0.215</wheelDiameter>
     <robotBaseFrame>Pioneer3AT/base_link</robotBaseFrame>
     <torque>20</torque>
-    <topicName>cmd_vel</topicName>
+    <commandTopic>cmd_vel</commandTopic>
     <broadcastTF>false</broadcastTF>
   </plugin>
     <!--    
