@@ -795,7 +795,7 @@
           </geometry>
         </collision>
         <sensor name='camera' type='camera'>
-          <pose frame=''>0 0 0 0 0 -1.57</pose>
+          <pose frame=''>0 0 0 1.57 0 0</pose>
           <camera name='__default__'>
             <horizontal_fov>2</horizontal_fov>
             <image>
@@ -825,32 +825,52 @@
             <distortionT2>0.0</distortionT2>
           </plugin>
         </sensor>
-        <pose frame=''>0 -0.01 0.07 1.57 -0 0</pose>
+        <pose frame=''>0 -0.01 0.07  0 1.57  0  </pose>
       </link>
+          <plugin name='tiltlink_controller' filename='libGimbalTiltlink.so'>
+	        <link>gimbal_small_2d_px4_1::tilt_link</link>
+        <initial_velocity>0 0.5 0</initial_velocity>
+
+        <!-- Scaling factor that is used to compute a new velocity -->
+        <velocity_factor>0.5</velocity_factor>
+
+        <!-- Time, in seconds, between new velocities -->
+        <update_period>5</update_period>
+
+        <!-- Clamp the Z velocity value to zero. You can also clamp x and
+             y values -->
+        <min_z>0</min_z>
+        <max_z>0</max_z>
+
+          </plugin>
       <joint name='gimbal_small_2d_px4_1::tilt_joint' type='revolute'>
         <parent>gimbal_small_2d_px4_1::base_link</parent>
         <child>gimbal_small_2d_px4_1::tilt_link</child>
+<!--
         <physics>
           <ode>
             <implicit_spring_damper>1</implicit_spring_damper>
           </ode>
         </physics>
+-->
         <axis>
-          <xyz>1 0 0</xyz>
+          <xyz>0 1 0</xyz>
+<!--
           <dynamics>
             <damping>0.5</damping>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
           <use_parent_model_frame>1</use_parent_model_frame>
+-->
           <limit>
-            <lower>-0.1</lower>
-            <upper>3.14159</upper>
-            <effort>10</effort>
-            <velocity>-1</velocity>
+            <lower>-3.610</lower>
+            <upper>3.610</upper>
           </limit>
+<!--
+-->
         </axis>
-        <pose frame=''>0 0 0.02 0 -0 0</pose>
+        <pose frame=''>0 0.02  0 0 -0 0</pose>
       </joint>
       <joint name='cgo3_camera_joint' type='fixed'>
         <pose frame=''>0 0 0 0 -0 0</pose>

@@ -262,14 +262,28 @@
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>left_front</leftFrontJoint>
+    <rightFrontJoint>right_front</rightFrontJoint>
+    <leftRearJoint>left_rear</leftRearJoint>
+    <rightRearJoint>right_rear</rightRearJoint>
+    <wheelSeparation>0.4</wheelSeparation>
+    <wheelDiameter>0.215</wheelDiameter>
+    <robotBaseFrame>Pioneer3AT/base_link</robotBaseFrame>
+    <torque>20</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>false</broadcastTF>
+  </plugin>
+    <!--    
     <plugin name="SkidSteerDrivePlugin" filename="libSkidSteerDrivePlugin.so">
       <right_front>right_front</right_front>
       <right_rear>right_rear</right_rear>
       <left_front>left_front</left_front>
       <left_rear>left_rear</left_rear>
-      <MaxForce>5.0</MaxForce>
+      <MaxForce>500.0</MaxForce>
     </plugin>
-    <!--    
 -->
     <link name='link_3'>
       <pose frame=''>-0.1 0 0.18 0 1e-06 0.000218</pose>
