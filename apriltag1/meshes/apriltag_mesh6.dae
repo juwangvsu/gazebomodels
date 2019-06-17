@@ -16,9 +16,6 @@
         <image id="texture1" name="texture1">
             <init_from>texture13.png</init_from>
         </image>
-        <image id="texture2" name="texture2">
-            <init_from>notexture.png</init_from>
-        </image>
     </library_images>
     <library_materials>
         <material id="material0" name="material0">
