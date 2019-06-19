@@ -107,12 +107,16 @@
 -->
     <joint name='cgo3_camera_joint' type='fixed'>
 <pose> 0 0 0 0 0 0 </pose>
-      <child>iris_demo_cam::gimbal_small_2d_px4_1::base_link</child>
+      <child>gimbal_small_2d_px4_1::base_link</child>
 <!--
+	parent and child link model name should not be here,
+	cause problem if gazebo_ros spawn_model
+      <child>iris_demo_cam::gimbal_small_2d_px4_1::base_link</child>
       <child>iris_demo_cam::cam_ros::link</child>
 -->
-      <parent>iris_demo_cam::iris::base_link</parent>
+      <parent>iris::base_link</parent>
 <!--
+      <parent>iris_demo_cam::iris::base_link</parent>
 -->
       <axis>
         <xyz>1 0 0</xyz>
