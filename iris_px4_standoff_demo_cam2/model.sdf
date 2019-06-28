@@ -610,7 +610,17 @@
       <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
     <plugin name='mavlink_interface' filename='librotors_gazebo_mavlink_interface.so'>
+<!--
+      <robotNamespace>irispx4_1</robotNamespace>
+        jwang 6/28/19 :
+        robotNamespace should be kept empty, otherwise px4 complain
+        simulator slow.
+        add a robotnm tag so gazebo publish gps to different topic
+                for debugging...
+-->
       <robotNamespace/>
+      <robotnm>irispx4_2</robotnm>
+      <dbgstep>5</dbgstep>
       <imuSubTopic>/imu</imuSubTopic>
       <mavlink_addr>INADDR_ANY</mavlink_addr>
       <mavlink_udp_port>14571</mavlink_udp_port>
