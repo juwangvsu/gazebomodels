@@ -34,13 +34,10 @@
 -->
 <link name="camera_rgb_frame">
       <pose>0 0 -0.03 0 0 0</pose>
-<!--
-      <pose frame=''>-0.3 0 0.18 0 1e-06 0.000218</pose>
--->
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.01 0.01 0.01</size>
+            <size>0.001 0.001 0.001</size>
           </box>
         </geometry>
       </collision>
@@ -57,18 +54,17 @@
         </axis>
 </joint>
 
+<!--
 <link name="camera_depth_frame">
       <pose>0 0 -0.035 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.01 0.01 0.01</size>
+            <size>0.001 0.001 0.001</size>
           </box>
         </geometry>
       </collision>
 </link>
-<!--
--->
 <joint name="camera_depth_to_base" type="fixed">
        <parent>chassis</parent>
        <child>camera_depth_frame</child>
@@ -80,6 +76,7 @@
           </limit>
         </axis>
 </joint>
+-->
     <link name="chassis">
       <inertial>
         <mass>54.0</mass>
