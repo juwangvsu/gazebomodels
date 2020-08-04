@@ -5,6 +5,9 @@
       <uri>model://iris_with_standoffs</uri>
     </include>
 
+    <!-- gimbal require ros launch 
+ -->
+
     <include>
       <uri>model://gimbal_small_2d</uri>
       <pose>0 -0.01 0.70 1 0 0</pose>
@@ -31,7 +34,6 @@
         <ode>
           <implicit_spring_damper>1</implicit_spring_damper>
           <limit>
-            <!-- testing soft limits -->
             <cfm>0.1</cfm>
             <erp>0.2</erp>
           </limit>
